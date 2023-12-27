@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="project1.css">
+</head>
+
+<body>
+    <div>
+
+
+        <h1>POST MATRIX SCHOLARSHIP</h1>
+        <div class="container">
+            <div class="title">
+                <h2>Student Form </h2>
+            </div>
+
+            <div class="box1">
+                <table>
+
+                    <form action="process.php">
+
+                        <label class="box-title" id="Name" aria-required="true">NAME: </label>
+                        <input type="text" name="name" placeholder="ENTER YOUR NAME" id="NAME" style="height: 23px;"
+                            required><br>
+                        <br>
+                        <label class="box-title" id="PASS">PASSWORD:</label>
+                        <input type="password" maxlength="10" style="height: 23px;" required><br>
+                        <br>
+                        <label class="box-title" id="email">EMAIL:</label>
+                        <input type="email" name="email" placeholder="    @gmail.com   " style="height: 23px;"
+                            required><br>
+                        <br>
+                        <label class="box-title" id="TEL">PHONE NO.:</label>
+                        <input type="tel" maxlength="10" style="height: 23px;" required><br>
+                        <br>
+
+                        <label class="box-title" id="Certificate">CERTIFICATE:</label>
+                        <input type="file" name="file" style="height: 23px;" required><br>
+                        <br>
+
+                        <label class="box-title" id="Admission">ADMISSION DATE:</label>
+                        <input type="date" name="date" style="height: 23px;" required><br>
+                        <br>
+                        <legend>CASTE:</legend>
+
+                        <div style="height: 25px;">
+                            <input type="radio" id="caste-1" name="drone" value="gen" style="height: 23px;" />
+                            <label for="huey">General</label>
+                        </div>
+
+                        <div style="height: 25px;">
+                            <input type="radio" id="caste-2" name="drone" value="obc" style="height: 23px;" />
+                            <label for="dewey">OBC</label>
+                        </div>
+
+                        <div style="height: 25px;">
+                            <input type="radio" id="caste-3" name="drone" value="sc-st" style="height: 23px;" />
+                            <label for="louie">SC/ST</label>
+                        </div>
+                        <div style="height: 25px;">
+                            <label>
+                                <input type="radio" id="other" name="interest" value="other" />
+                                Other
+                            </label>
+                            <input type="text" id="otherValue" name="other" aria-label="Other interest" />
+                        </div>
+
+
+                        <label class="box-title" for="cousre">COURSE: </label>
+                        <select name="Course" id="course" style="height: 23px;">
+                            <option value="course">SELECT COURSE</option>
+                            <option value="course">MATRIX</option>
+                            <option value="course">INTERMEDIATE</option>
+                            <option value="course">BSC</option>
+                            <option value="course">BCA</option>
+                            <option value="course">BBA</option>
+                            <option value="course">MCA</option>
+                        </select>
+                        <br>
+                        <br>
+                        <button class="login" type="button">Submit</button>
+                    </form>
+
+                </table>
+                <br>
+            </div>
+        </div>
+
+
+</body>
+<script>
+
+    const otherradio = document.querySelector("#other");
+    const otherText = document.querySelector("#otherValue");
+    otherText.style.visibility = "hidden";
+
+    otherradio.addEventListener("change", () => {
+        if (otherradio.checked) {
+            otherText.style.visibility = "visible";
+            otherText.value = "";
+        } else {
+            otherText.style.visibility = "hidden";
+        }
+    });
+    // Get the button element
+    const button = document.querySelector('button');
+
+    // Add an event listener to the button that listens for the click event
+    button.addEventListener('click', function () {
+        // Display the prompt when the button is clicked
+        const userpassword = prompt('Please enter your password again');
+        console.log(userpassword);
+        userpassword=confirm("Are you really want to submit this form ?");
+        console.log(userpassword);
+        
+            if (userpassword) {
+            alert("login successfully");
+        }
+        else{
+             alert("login failed");
+        
+        }});
+
+</script>
+
+</html>
